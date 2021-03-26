@@ -32,36 +32,20 @@ namespace UIR_Rechner
 
             labelResult.Text = Convert.ToString(calculator.Result);
 
-            VBox vBox1 = new VBox();
-            VBox vBox2 = new VBox();
-            VBox vBoxU = new VBox();
-            VBox vBoxI = new VBox();
-            VBox vBoxRi = new VBox();
+            Fixed fix = new Fixed();
+            fix.Put(labelU, 60, 80);
+            fix.Put(entryU, 60, 100);
 
-            HBox hBox = new HBox();
+            fix.Put(labelI, 250, 80);
+            fix.Put(entryI, 250, 100);
 
-            vBoxU.Add(labelU);
-            vBoxU.Add(entryU);
+            fix.Put(labelRi, 440, 80);
+            fix.Put(entryRi, 440, 100);
 
-            vBoxI.Add(labelI);
-            vBoxI.Add(entryI);
+            fix.Put(button, 250, 160);
+            fix.Put(labelResult, 280, 200);
 
-            vBoxRi.Add(labelRi);
-            vBoxRi.Add(entryRi);
-
-            vBox2.Add(button);
-            vBox2.Add(labelResult);
-
-            hBox.Add(vBoxU);
-            hBox.Add(vBoxI);
-            hBox.Add(vBoxRi);
-
-            vBox1.Add(hBox);
-            vBox1.Add(vBox2);
-
-            button.SetSizeRequest(80,30);
-
-            Add(vBox1);
+            Add(fix);
 
             ShowAll();
         }
